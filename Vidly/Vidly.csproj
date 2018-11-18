@@ -167,6 +167,18 @@
     <Compile Include="Migrations\201811181451512_AddMemberShipType.Designer.cs">
       <DependentUpon>201811181451512_AddMemberShipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811181455324_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201811181455324_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201811181455324_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811181459296_FixedMemberShipType.cs" />
+    <Compile Include="Migrations\201811181459296_FixedMemberShipType.Designer.cs">
+      <DependentUpon>201811181459296_FixedMemberShipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811181503321_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201811181503321_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201811181503321_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -242,6 +254,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811181451512_AddMemberShipType.resx">
       <DependentUpon>201811181451512_AddMemberShipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811181455324_PopulateMembershipType.resx">
+      <DependentUpon>201811181455324_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811181459296_FixedMemberShipType.resx">
+      <DependentUpon>201811181459296_FixedMemberShipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811181503321_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201811181503321_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
