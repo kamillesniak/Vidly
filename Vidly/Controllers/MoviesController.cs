@@ -10,22 +10,71 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
-        public ActionResult Random()
+        private MyDbContext _context;
+        private List<Movie> movies;
+        public MoviesController()
         {
-           var movie =  new Movie { Name = "Shrek" };
-            var customers = new List<Customer>
+            _context = new MyDbContext();
+            movies = _context.Movies.ToList();
+
+        }
+        // GET: Movies
+        public ActionResult Index()
+        {
+            return View(movies);
+        }
+
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+            var viewModel = new MovieGenreViewModel
             {
-                new Customer {Name="Customer 1"},
-                new Customer {Name="Customer 2"}
+                Genres = genres
             };
-            var viewModel = new RandomMovieViewModel
+            return View("MovieForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Movies");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+            if (movie == null)
+                return HttpNotFound();
+            var viewModel = new MovieGenreViewModel
             {
                 Movie = movie,
-                Customers = customers
+                Genres = _context.Genres.ToList()
             };
-            return View(viewModel);
+
+            return View("MovieForm", viewModel);
         }
+
+        public ActionResult Details(int id)
+        {
+            var movie = movies.SingleOrDefault(x => x.Id == id);
+            if (movie == null)
+                HttpNotFound();
+            return View(movie);
+        }
+
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
