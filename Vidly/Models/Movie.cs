@@ -21,7 +21,7 @@ namespace Vidly.Models
         [Required]
         public DateTime ReleaseDate { get; set; }
 
-        [Required]
+        [NumberBetween]
         public int NumberInStock { get; set; }
     }
 }
