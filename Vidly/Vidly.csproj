@@ -177,6 +177,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
+    <Compile Include="Dto\GenreDto.cs" />
     <Compile Include="Dto\MembershipTypeDto.cs" />
     <Compile Include="Dto\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -229,6 +230,10 @@
     <Compile Include="Migrations\201811192029031_FillGenreAndMovies.cs" />
     <Compile Include="Migrations\201811192029031_FillGenreAndMovies.Designer.cs">
       <DependentUpon>201811192029031_FillGenreAndMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811251410095_GenreInMovie.cs" />
+    <Compile Include="Migrations\201811251410095_GenreInMovie.Designer.cs">
+      <DependentUpon>201811251410095_GenreInMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -519,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811192029031_FillGenreAndMovies.resx">
       <DependentUpon>201811192029031_FillGenreAndMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811251410095_GenreInMovie.resx">
+      <DependentUpon>201811251410095_GenreInMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Http;
 using Vidly.Dto;
 using Vidly.Models;
+using System.Data.Entity;
+
 
 namespace Vidly.Controllers.Api
 {
@@ -20,7 +22,12 @@ namespace Vidly.Controllers.Api
         //GET /api/movies
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+            var movies = _context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
+
+            return Ok(movies);
         }
 
         //GET /api/movies/1 
@@ -72,12 +79,12 @@ namespace Vidly.Controllers.Api
         [HttpDelete]
         public IHttpActionResult DeleteMovie(int id)
         {
-            var movieInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
 
             if (movieInDb == null)
                 return NotFound();
 
-            _context.Customers.Remove(movieInDb);
+            _context.Movies.Remove(movieInDb);
             _context.SaveChanges();
 
             return Ok();
