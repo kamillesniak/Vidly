@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -283,6 +283,14 @@
     <Compile Include="Migrations\201811251851239_SeedUsersAgain.cs" />
     <Compile Include="Migrations\201811251851239_SeedUsersAgain.Designer.cs">
       <DependentUpon>201811251851239_SeedUsersAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811261724100_AddDrivingLicense.cs" />
+    <Compile Include="Migrations\201811261724100_AddDrivingLicense.Designer.cs">
+      <DependentUpon>201811261724100_AddDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811262019475_PhoneNumberForUser.cs" />
+    <Compile Include="Migrations\201811262019475_PhoneNumberForUser.Designer.cs">
+      <DependentUpon>201811262019475_PhoneNumberForUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -611,6 +619,12 @@
     <EmbeddedResource Include="Migrations\201811251851239_SeedUsersAgain.resx">
       <DependentUpon>201811251851239_SeedUsersAgain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811261724100_AddDrivingLicense.resx">
+      <DependentUpon>201811261724100_AddDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811262019475_PhoneNumberForUser.resx">
+      <DependentUpon>201811262019475_PhoneNumberForUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -630,7 +644,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53921</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53921/</IISUrl>
+          <IISUrl>https://localhost:44306/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
