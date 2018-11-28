@@ -25,5 +25,7 @@ namespace Vidly.Models
 
         [NumberBetween]
         public int NumberInStock { get; set; }
+
+        public int NumberAvailable { get; set; }
     }
 }

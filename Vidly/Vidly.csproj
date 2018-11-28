@@ -232,6 +232,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\GenreDto.cs" />
     <Compile Include="Dto\MembershipTypeDto.cs" />
@@ -320,6 +321,18 @@
     <Compile Include="Migrations\201811281855218_NullableRental.cs" />
     <Compile Include="Migrations\201811281855218_NullableRental.Designer.cs">
       <DependentUpon>201811281855218_NullableRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281902505_AvabilityNumberInMovie.cs" />
+    <Compile Include="Migrations\201811281902505_AvabilityNumberInMovie.Designer.cs">
+      <DependentUpon>201811281902505_AvabilityNumberInMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281904397_AvabilityNumberSeed.cs" />
+    <Compile Include="Migrations\201811281904397_AvabilityNumberSeed.Designer.cs">
+      <DependentUpon>201811281904397_AvabilityNumberSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281906193_NumberAvailableNameChange.cs" />
+    <Compile Include="Migrations\201811281906193_NumberAvailableNameChange.Designer.cs">
+      <DependentUpon>201811281906193_NumberAvailableNameChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -453,10 +466,13 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\Typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -541,6 +557,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -582,6 +602,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -660,6 +681,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811281855218_NullableRental.resx">
       <DependentUpon>201811281855218_NullableRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281902505_AvabilityNumberInMovie.resx">
+      <DependentUpon>201811281902505_AvabilityNumberInMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281904397_AvabilityNumberSeed.resx">
+      <DependentUpon>201811281904397_AvabilityNumberSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281906193_NumberAvailableNameChange.resx">
+      <DependentUpon>201811281906193_NumberAvailableNameChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
